@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+    <head>
+        <meta charset="UTF-8">
+        <title>ui-grid</title>
+        <link rel="stylesheet" href="http://ui-grid.info/release/ui-grid.css" type="text/css">
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-touch.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.js"></script>
+        <script src="http://ui-grid.info/docs/grunt-scripts/csv.js"></script>
+        <script src="http://ui-grid.info/docs/grunt-scripts/pdfmake.js"></script>
+        <script src="http://ui-grid.info/docs/grunt-scripts/vfs_fonts.js"></script>
+        <script src="http://ui-grid.info/release/ui-grid.js"></script>
+        <script src="module.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body ng-controller = "gridController as vm">
+        <div id="grid1" ui-grid = "{data: vm.data}"></div>
+
+    </body>
+</html>
