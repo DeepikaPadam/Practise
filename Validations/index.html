@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app = 'myApp'>
+    <head>
+        <meta charset="UTF-8">
+        <title>validations</title>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+            <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-messages.js"></script>
+
+            <!-- load our custom app -->
+            <script src="app.js"></script>
+    </head>
+    <body ng-controller="validationController as vm">
+        <form name="userForm"  ng-submit="vm.submitForm()" novalidate>
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" name="name" class="form-control" ng-model="vm.name" required>
+                <div class="help-block" ng-messages="userForm.name.$error" ng-if="userForm.name.$touched">
+                    <p ng-message="required">Your name is required.</p>
+                </div>
+                <span ng-show="(userForm.name.$dirty || vm.submitted) && userForm.name.$error.required">
+                  Your name is required
+                </span>
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" name="email" class="form-control" ng-model="vm.email" required>
+                <div class="help-block" ng-messages="userForm.email.$error" ng-if="userForm.email.$touched">
+                    <p ng-message="required">Email is required</p>
+                    <p ng-message="email">Enter valid email</p>
+                </div>
+                <span ng-show="(userForm.email.$dirty || vm.submitted) && userForm.email.$error.required">
+                  Email is required
+                </span>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </body>
+</html>
