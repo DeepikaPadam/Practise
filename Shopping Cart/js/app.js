@@ -61,6 +61,7 @@
             }else if(item.count > 1){
                 item.count--;
             }
-       }
+           vm.total -= parseFloat(item.price);
+       };
    });
 })();
