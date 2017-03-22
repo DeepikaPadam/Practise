@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app = "myApp">
+    <head>
+        <meta charset="UTF-8">
+        <title>CheckBox Example</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body class="text-center" ng-controller="myController">
+        <div class="col-lg-4">
+            <input type="checkbox" ng-model="checkBox.approveAll" ng-change="approveCheckAll()">ApproveAll<br>
+            <div ng-repeat="value in checkBox.values">
+                <input type="checkbox" ng-model="value.isChecked" ng-change="approveUnCheck()">{{value.value}}
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <input type="checkbox" ng-model="checkBox.rejectAll" ng-change="rejectCheckAll()">RejectAll<br>
+            <div ng-repeat="value in checkBox.values">
+                <input type="checkbox" ng-model="value.isRejectChecked" ng-change="rejectUnCheck()">{{value.value}}
+            </div>
+        </div>
+    </body>
+</html>
