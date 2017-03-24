@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+    <head>
+        <meta charset="UTF-8">
+        <title>Masking</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body ng-controller="myController">
+        <input type="text" ng-model="mainStr">
+        <button ng-click = "maskNumber()">Mask</button><br>
+        {{mask}}
+    </body>
+</html>

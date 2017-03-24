@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+    <head>
+        <meta charset="UTF-8">
+        <title>Masking</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    </head>
+    <body ng-controller="myController">
+        <script>
+            var app = angular.module("myApp", []);
+
+            app.controller("myController", function($scope){
+               var mainStr = "1231746345763";
+               $scope.str = mainStr.slice(-4);
+               var count ="";
+                for(var i = (mainStr.length)-4; i>0; i&#45;&#45;){
+                   count += '*';
+
+                }
+                alert(count+$scope.str);
+            });
+        </script>
+    </body>
+</html>
