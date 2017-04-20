@@ -1,0 +1,51 @@
+<html ng-app = 'myApp' ng-cloak>
+	<head>
+		<title>Validations</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-messages.js"></script>
+            <script src="js/module.js"></script>
+        	<script src="js/app.js"></script>
+	</head>
+	<body ng-controller="validationController as vm">
+		<form name="userForm"  ng-submit="vm.submitForm()" novalidate>
+			<div class="col-md-6 col-md-offset-3">
+			    <h2>Register Here</h2>
+		        <div class="form-group">
+		            <label for="name">Name</label>
+		            <input type="text" name="name" id="name" class="form-control" ng-model="vm.name" required />
+		            <span style="color:red" ng-show="(userForm.name.$dirty || vm.submitted) && userForm.name.$error.required ||(userForm.name.$touched && userForm.name.$invalid)">
+	                  Your name is required
+	                </span>
+		        </div>
+		        <div class="form-group">
+		            <label for="username">Username</label>
+		            <input type="username" name="username" id="username" class="form-control" ng-model="vm.username" required />
+		            <span style="color:red" ng-show="(userForm.username.$dirty || vm.submitted) && userForm.username.$error.required ||(userForm.username.$touched && userForm.username.$invalid)">
+	                 	Username is required
+	                </span>
+		        </div>
+		        <div class="form-group">
+		            <label for="mobile">Mobile</label>
+		            <input type="number" name="mobile" id="mobile" class="form-control" ng-model="vm.mobile" required />
+		            <span style="color:red" ng-show="(userForm.mobile.$dirty || vm.submitted) && userForm.mobile.$error.required ||(userForm.mobile.$touched && userForm.mobile.$invalid)">
+	                   Mobile number is required
+	                </span>
+		        </div>
+		        <div class="form-group" >
+		            <label for="password">Password</label>
+		            <input type="password" name="password" id="password" class="form-control" ng-model="vm.password" required />
+		            <span style="color:red" ng-show="(userForm.password.$dirty || vm.submitted) && userForm.password.$error.required ||(userForm.password.$touched && userForm.password.$invalid)">
+	                   Password is required
+	                </span>
+		        </div>
+		        <div class="form-actions">
+		            <button type="submit" class="btn btn-primary">Register</button>
+		            <a ui-sref="login" class="btn btn-primary">Login</a>
+		        </div>
+			</div>	
+		</form>
+	</body>
+</html>
